@@ -1,0 +1,11 @@
+
+jwt:
+  secret: peaksong
+  expiration: 7200000  # ºÁÃëÎªµ¥Î»
+  header: Authorization
+  prefix: juejin
+
+server:
+  port: 9090
+
+
