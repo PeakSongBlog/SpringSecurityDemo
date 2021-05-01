@@ -7,11 +7,11 @@ import javax.persistence.Id
 data class UserRoleMapPk(
 
     @Id
-    @Column("USER_ID")
+    @Column(name="USER_ID")
     val userId: String,
 
     @Id
-    @Column("ROLE_NAME")
+    @Column(name="ROLE_NAME")
     val roleName: String
 
 ): Serializable

@@ -42,7 +42,7 @@ class AuthConfig: WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
         with(http) {
-            csrf.disable()
+            csrf().disable()
 
             cors()
 

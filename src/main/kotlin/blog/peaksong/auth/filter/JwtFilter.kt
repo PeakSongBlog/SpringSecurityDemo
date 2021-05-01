@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets
 import javax.servlet.FilterChain
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
+import kotlin.streams.toList
 
 class JwtFilter: OncePerRequestFilter() {
 
@@ -62,7 +63,7 @@ class JwtFilter: OncePerRequestFilter() {
             }
 
             val username: String = JwtUtil.getUserName(token)
-            val authorities = JwtUtil.getRole(token).stream().map { SimpleGrantedAuthority(it) }
+            val authorities = JwtUtil.getRole(token).stream().map { SimpleGrantedAuthority(it) }.toList()
 
             log.info("token 令牌验证成功")
 
